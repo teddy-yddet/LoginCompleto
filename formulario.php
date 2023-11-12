@@ -42,6 +42,8 @@
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,
             sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
             VALUES('$nome', '$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
+
+            header('Location: login.php');
     }
        
 ?>
@@ -128,6 +130,7 @@
     </style>
 </head>
 <body>
+<a href="home.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method = "POST">
             <fieldset>
@@ -136,6 +139,11 @@
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="nome" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
