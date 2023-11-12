@@ -31,6 +31,7 @@
 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
+        $senha = $_POST['senha'];
         $telefone = $_POST['telefone'];        
         $genero = $_POST['genero'];
         $data_nascimento = $_POST['data_nascimento'];
@@ -39,9 +40,9 @@
         $endereco = $_POST['endereco'];
         $cpf = $_POST['cpf'];
         $credito = $_POST['credito'];
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,
             sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
-            VALUES('$nome', '$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
+            VALUES('$nome','$senha','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
 
             header('Location: login.php');
     }
