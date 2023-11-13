@@ -5,18 +5,34 @@
         print_r('Nome: ' . $_POST['nome']);
         print_r('<br>');
         print_r('Tipo: ' . $_POST['tipo']);
+        print_r('<br>');
+        print_r('Senha: ' . $_POST['senha']);
+        print_r('<br>');
 
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-    
+        
         include_once('config.php');
-
+        
         $nome = $_POST['nome'];
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
-        $tipo = $_POST['tipo'];        
+        $tipo = $_POST['tipo'];
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        
+        if (password_verify($senha, $senhaHash)) {
+            $teste = "Senha correta";
+
+            echo $teste;
+            echo $senhaHash;
+        } else 
+        {
+            $teste = "Senha incorreta";
+            echo $teste;
+        }
 
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,usuario,senha,tipo)
             VALUES('$nome','$usuario','$senhaHash','$tipo')");
+
+        echo $result;
 
             header('Location: login.php');
     }
@@ -129,13 +145,13 @@
 
                 <p>Tipo:</p>
                 
-                <input type="radio" id="aluno" name="tipo" value="aluno" required>
+                <input type="radio" id="aluno" name="tipo" value="A" required>
                 <label for="aluno">Aluno</label>
                 <br>
-                <input type="radio" id="professor" name="tipo" value="professor" required>
+                <input type="radio" id="professor" name="tipo" value="P" required>
                 <label for="professor">Professor</label>
                 <br>
-                <input type="radio" id="diretor" name="tipo" value="diretor" required>
+                <input type="radio" id="diretor" name="tipo" value="D" required>
                 <label for="diretor">Diretor</label>
                 <br><br>
                 

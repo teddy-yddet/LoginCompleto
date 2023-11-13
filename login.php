@@ -54,8 +54,9 @@
         <br><br>
         <input class="inputSubmit" type="submit" name="submit" value="Enviar">
         </form>
-        <p>Usuario: maria<br>Senha: 123</p>
-        <p>Usuario: sidnei<br>Senha: 123</p>
+        <p>Usuario: maria<br>Senha: 123 - diretor</p>
+        <p>Usuario: sidnei<br>Senha: 123 - aluno</p>
+        <p>Usuario: jose<br>Senha: 123 - professor</p>
     </div>
 </body>
 </html>

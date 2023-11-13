@@ -2,11 +2,10 @@
     session_start();
     include_once('config.php');
     // print_r($_SESSION);
-    if((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha']) == true))
+    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
     {
-        unset($_SESSION['usuario']);
+        unset($_SESSION['email']);
         unset($_SESSION['senha']);
-        unset($_SESSION['tipo']);
         header('Location: login.php');
     }
     $logado = $_SESSION['email'];
