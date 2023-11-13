@@ -21,7 +21,7 @@
         $endereco = $_POST['endereco'];
         $cpf = $_POST['cpf'];
         $credito = $_POST['credito'];
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,
+        $result = mysqli_query($conexao, "INSERT INTO visitantes(nome,senha,email,telefone,
             sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
             VALUES('$nome','$senhaHash','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
 
@@ -36,7 +36,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>Visitantes</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -114,9 +114,9 @@
 <body>
 <a href="home.php">Voltar</a>
     <div class="box">
-        <form action="formulario.php" method = "POST">
+        <form action="visitantes.php" method = "POST">
             <fieldset>
-                <legend><b>Cadastrar alunos</b></legend>
+                <legend><b>Cadastro de visitantes</b></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
