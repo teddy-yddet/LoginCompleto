@@ -5,14 +5,17 @@
     {
         // Acessa
         include_once('config.php');
-        $email = $_POST['usuario'];
+        $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
+        $tipo = $_POST['tipo'];
 
         // print_r('Email: ' . $email);
         // print_r('<br>');
         // print_r('Senha: ' . $senha);
 
-        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' and senha = '$senha'";
+        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+
+        echo $sql;
 
         $result = $conexao->query($sql);
 
@@ -27,14 +30,16 @@
         }
         else
         {
-            $_SESSION['email'] = $usuario;
+            $_SESSION['usuario'] = $usuario;
             $_SESSION['senha'] = $senha;
+            $_SESSION['tipo'] = $tipo;
             header('Location: sistema.php');
         }
     }
     else
     {
         // Não acessa
-        header('Location: login.php');
+        echo "Falha ao logar";
+        //header('Location: login.php');
     }
 ?>

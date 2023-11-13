@@ -16,7 +16,7 @@
         $tipo = $_POST['tipo'];        
 
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,usuario,senha,tipo)
-            VALUES('$nome','$usuario','$senha','$tipo')");
+            VALUES('$nome','$usuario','$senhaHash','$tipo')");
 
             header('Location: login.php');
     }

@@ -30,8 +30,9 @@
 
 if(issset($_POST['email']))
 {
+	include("config.php");
 	$email = $_POST['email'];
-	$senha = $POST['senha'];
+	$senha = $_POST['senha'];
 	
 	$sql_code = "SELECT * FROM senhas WHERE email = "$email" LIMIT 1";
 	$sql_exec = $mysql->query($sql_code) or die($mysqli->error);
