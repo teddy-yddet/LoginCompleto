@@ -35,7 +35,9 @@ if(issset($_POST['email']))
 	$senha = $_POST['senha'];
 	
 	$sql_code = "SELECT * FROM senhas WHERE email = "$email" LIMIT 1";
-	$sql_exec = $mysql->query($sql_code) or die($mysqli->error);
+	$sql_exec = $mysqli->query($sql_code) or die($mysqli->error);
+	
+	$usuario = $sql_exec->fetch_assoc();
 	
 	if(password_verify($senha, $usuario['senha']))
 	{

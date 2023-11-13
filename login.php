@@ -48,7 +48,7 @@
         <h1>Tela de login</h1>
         <form action="testeLogin.php" method="POST">            
         
-        <input type="text" name="email" placeholder="Email">
+        <input type="text" name="usuario" placeholder="Usuário">
         <br><br>
         <input type="password" name="senha" placeholder="Senha">
         <br><br>

@@ -7,21 +7,21 @@
         include_once('config.php');
         $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
-        $tipo = $_POST['tipo'];
 
         // print_r('Email: ' . $email);
         // print_r('<br>');
         // print_r('Senha: ' . $senha);
 
-        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
-
-        echo $sql;
-
-        $result = $conexao->query($sql);
+        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' LIMIT 1";
+        //$result = $conexao->query($sql);
+        $result = $conexao->query($sql) or die($conexao->error);
+        $usuario = $result->fetch_assoc();
+        //$tipo = $result['tipo'];
 
         // print_r($sql);
         // print_r($result);
 
+        /*
         if(mysqli_num_rows($result) < 1)
         {
             unset($_SESSION['usuario']);
@@ -35,6 +35,26 @@
             $_SESSION['tipo'] = $tipo;
             header('Location: sistema.php');
         }
+        */
+
+        if(password_verify($senha, $usuario['senha']))
+        {
+            echo "Usuário logado!";
+        }
+        else
+        {
+            echo "Falha ao logar. Senha ou usuário incorretos!";
+            print_r('Senha: ' . $senha);
+            print_r('Boolean: ' . $usuario['senha']);
+
+
+        }
+
+
+
+
+
+
     }
     else
     {
