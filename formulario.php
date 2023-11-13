@@ -25,7 +25,7 @@
         // print_r('Sexo: ' . $_POST['sexo']);
         // print_r('<br>');
 
-
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
     
         include_once('config.php');
 
@@ -42,7 +42,7 @@
         $credito = $_POST['credito'];
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,
             sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
-            VALUES('$nome','$senha','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
+            VALUES('$nome','$senhaHash','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
 
             header('Location: login.php');
     }
@@ -135,7 +135,7 @@
     <div class="box">
         <form action="formulario.php" method = "POST">
             <fieldset>
-                <legend><b>Fórmulário de Clientes</b></legend>
+                <legend><b>Cadastrar alunos</b></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
