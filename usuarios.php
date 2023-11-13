@@ -4,26 +4,19 @@
     {
         print_r('Nome: ' . $_POST['nome']);
         print_r('<br>');
-        print_r('Email: ' . $_POST['email']);
+        print_r('Tipo: ' . $_POST['tipo']);
 
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
     
         include_once('config.php');
 
         $nome = $_POST['nome'];
-        $email = $_POST['email'];
+        $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
-        $telefone = $_POST['telefone'];        
-        $genero = $_POST['genero'];
-        $data_nascimento = $_POST['data_nascimento'];
-        $cidade = $_POST['cidade'];
-        $estado = $_POST['estado'];
-        $endereco = $_POST['endereco'];
-        $cpf = $_POST['cpf'];
-        $credito = $_POST['credito'];
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,
-            sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
-            VALUES('$nome','$senhaHash','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
+        $tipo = $_POST['tipo'];        
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,usuario,senha,tipo)
+            VALUES('$nome','$usuario','$senha','$tipo')");
 
             header('Location: login.php');
     }
@@ -36,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>Cadastro de usuários</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -114,7 +107,7 @@
 <body>
 <a href="home.php">Voltar</a>
     <div class="box">
-        <form action="formulario.php" method = "POST">
+        <form action="usuarios.php" method = "POST">
             <fieldset>
                 <legend><b>Cadastrar usuários</b></legend>
                 <br>
@@ -122,58 +115,30 @@
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
                 </div>
-                <br><br>                
+                <br><br> 
+                <br>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
+                    <input type="text" name="usuario" id="usuario" class="inputUser" required>
+                    <label for="usuario" class="labelInput">Usuário</label>
                 </div>
-                <br><br>
+                <br><br> 
                 <div class="inputBox">
-                    <input type="password" name="senha" id="nome" class="inputUser" required>
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
                     <label for="senha" class="labelInput">Senha</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="telefone" class="labelInput">Telefone</label>
-                </div>
-                <p>Sexo:</p>
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
-                <label for="feminino">Feminino</label>
+                </div>               
+
+                <p>Tipo:</p>
+                
+                <input type="radio" id="aluno" name="tipo" value="aluno" required>
+                <label for="aluno">Aluno</label>
                 <br>
-                <input type="radio" id="masculino" name="genero" value="masculino" required>
-                <label for="masculino">Masculino</label>
+                <input type="radio" id="professor" name="tipo" value="professor" required>
+                <label for="professor">Professor</label>
                 <br>
-                <input type="radio" id="outro" name="genero" value="outro" required>
-                <label for="outro">Outro</label>
+                <input type="radio" id="diretor" name="tipo" value="diretor" required>
+                <label for="diretor">Diretor</label>
                 <br><br>
-                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
-                <input type="date" name="data_nascimento" id="data_nascimento" required>
-                <br><br><br>
-                <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                    <label for="cidade" class="labelInput">Cidade</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="estado" class="labelInput">Estado</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="endereco" class="labelInput">Endereço</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="cpf" id="cpf" class="inputUser" required>
-                    <label for="cpf" class="labelInput">CPF</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="credito" id="credito" class="inputUser" required>
-                    <label for="credito" class="labelInput">Cartão de crédito</label>
-                </div>
+                
                 <br><br>
                 <input type="submit" name="submit" id="submit">
             </fieldset>
