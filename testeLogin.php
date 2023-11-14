@@ -5,7 +5,8 @@
     {
         // Acessa
         include_once('config.php');
-        $usuario = $_POST['usuario'];
+        //$usuario = $_POST['usuario']; // modo normal 
+        $usuario = htmlspecialchars($_POST['usuario']);
         $senha = $_POST['senha'];
         
         // print_r('Email: ' . $email);
@@ -57,7 +58,7 @@
             }
             else if($usuario['tipo'] == "P")
             {
-                echo "vai para alunos";
+                //echo "vai para alunos";
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
@@ -65,7 +66,7 @@
             }
             else if($usuario['tipo'] == "D")
             {
-                echo "vai para sistema";
+                //echo "vai para sistema";
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
@@ -73,8 +74,8 @@
             }
             else
             {
-                echo "entrou no else";
-                //header('Location: login.php');
+                //echo "entrou no else";
+                header('Location: login.php');
             }
         }
         else
