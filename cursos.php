@@ -1,14 +1,14 @@
 <?php
     session_start();
     include_once('config.php');
-    // print_r($_SESSION);
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true))
+    //print_r($_SESSION);
+    if((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha']) == true))
     {
-        unset($_SESSION['email']);
+        unset($_SESSION['usuario']);
         unset($_SESSION['senha']);
         header('Location: login.php');
     }
-    $logado = $_SESSION['email'];
+    $logado = $_SESSION['usuario']['usuario'];
     if(!empty($_GET['search']))
     {
         $data = $_GET['search'];

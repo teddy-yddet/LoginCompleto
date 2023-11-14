@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 13-Nov-2023 às 10:34
+-- Tempo de geração: 14-Nov-2023 às 02:03
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -59,7 +59,6 @@ INSERT INTO `cursos` (`codigo`, `nome`, `nivel`, `duracao`, `periodo`) VALUES
 (2, 'Técnico em Administração', 'tecnico', '2 anos', 'vespertino'),
 (3, 'Tecnologia em Análise e Desenvolvimento de Si', 'graducacao', '3 anos', 'noturno'),
 (4, 'Tecnologia em Processos Gerenciais', 'graducacao', '2 anos', 'noturno'),
-(5, 'Tecnologia em Processos Gerenciais', 'posgraduacao', '1 ano', 'noturno'),
 (6, 'Especialização em Gestão de Projetos', 'posgraduacao', '1 ano', 'noturno');
 
 -- --------------------------------------------------------
@@ -74,29 +73,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nome` varchar(45) NOT NULL,
   `usuario` varchar(10) NOT NULL,
   `senha` char(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `email` varchar(110) NOT NULL,
-  `telefone` varchar(15) NOT NULL,
   `tipo` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'A',
-  `sexo` varchar(15) DEFAULT NULL,
-  `data_nasc` date DEFAULT NULL,
-  `cidade` varchar(45) DEFAULT NULL,
-  `estado` varchar(45) DEFAULT NULL,
-  `endereco` varchar(50) NOT NULL,
-  `cpf` varchar(15) NOT NULL,
-  `cartaocredito` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha`, `email`, `telefone`, `tipo`, `sexo`, `data_nasc`, `cidade`, `estado`, `endereco`, `cpf`, `cartaocredito`) VALUES
-(1, '', 'aluno', '0f359740bd1cda994f8b55330c86d845', '', '', 'A', NULL, NULL, NULL, NULL, '', '', ''),
-(2, '', 'professor', '0f359740bd1cda994f8b55330c86d845', '', '', 'P', NULL, NULL, NULL, NULL, '', '', ''),
-(3, 'Sidnei Mitani', '', '123', 'sidnei@mitani.com', '1989891929292', 'A', 'masculino', '2023-11-13', 'Capivari', 'São Paulo', 'avenida piratininga, 424', '102044823897', '3214654732159875'),
-(5, 'Maria José', '', '123', 'maria@jose.com', '564635454', 'A', 'feminino', '2023-10-29', 'Capivari', 'são paulo', 'asdlfkaslj', '213132', '65465465'),
-(6, 'criptografado', '', '$2y$10$Axd8eG9JxzW740MSu/CPZuQ/E', 'criptogr@fado.com', '987654321', 'A', 'masculino', '2023-11-07', 'mombuca', 'são paulo', 'rua das casas, 123', '321654987', '32132132');
+INSERT INTO `usuarios` (`id`, `nome`, `usuario`, `senha`, `tipo`) VALUES
+(16, 'José da Silva', 'jose', '$2y$10$lztjiksk.qmbSG33DvFl1OlU5146TQx8vs6moKXT/fuIWE.b3XfrO', 'P'),
+(15, 'Maria da Silva', 'maria', '$2y$10$IDDN1LFRMkoSRV4P2Sfqi.asab6wZACnXc26.ORSUr157tTtmoBha', 'D'),
+(14, 'Sidnei Mitani', 'sidnei', '$2y$10$rlcutLBR1k4Rqppkeb31eOBvu1fLT3WlpzjvC78C7LMqUAuNyY0EO', 'A');
 
 -- --------------------------------------------------------
 
@@ -128,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `visitantes` (
 --
 
 INSERT INTO `visitantes` (`id`, `nome`, `usuario`, `senha`, `email`, `telefone`, `tipo`, `sexo`, `data_nasc`, `cidade`, `estado`, `endereco`, `cpf`, `cartaocredito`) VALUES
-(12, 'Maria José', '', '$2y$10$GX3L15mXxeI7MgyQe4X1c.xSkuP/.zcwsXtxHAj71gD3HLqTolbmO', 'maria@jose.com', '19999999999', 'A', 'feminino', '2023-10-31', 'Mombuca', 'São Paulo', 'Rua das casas, 123', '32165498712', '32146547654198746');
+(12, 'Roberto Carlos', '', '$2y$10$GX3L15mXxeI7MgyQe4X1c.xSkuP/.zcwsXtxHAj71gD3HLqTolbmO', 'roberto@carlos.com', '19999999999', 'A', 'feminino', '2023-10-31', 'Mombuca', 'São Paulo', 'Rua das casas, 123', '32165498712', '32146547654198746');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
