@@ -11,6 +11,7 @@
         include_once('config.php');
 
         $nome = $_POST['nome'];
+        $usuario = $_POST['usuario'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $telefone = $_POST['telefone'];        
@@ -21,9 +22,11 @@
         $endereco = $_POST['endereco'];
         $cpf = $_POST['cpf'];
         $credito = $_POST['credito'];
-        $result = mysqli_query($conexao, "INSERT INTO visitantes(nome,senha,email,telefone,
-            sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
-            VALUES('$nome','$senhaHash','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
+
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+        $result = mysqli_query($conexao, "INSERT INTO visitantes(nome,usuario,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco,cpf,cartaocredito)
+            VALUES('$nome', '$usuario', '$senhaHash','$email','$telefone','$genero','$data_nascimento','$cidade','$estado','$endereco','$cpf','$credito')");
 
             header('Location: login.php');
     }
@@ -126,6 +129,11 @@
                 <div class="inputBox">
                     <input type="text" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="usuario" id="email" class="inputUser" required>
+                    <label for="usuario" class="labelInput">Usuário</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
