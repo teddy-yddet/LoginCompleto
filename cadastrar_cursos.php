@@ -98,6 +98,21 @@
     </style>
 </head>
 <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <a href="home.php">Voltar</a>
     <div class="box">
         <form action="cadastrar_cursos.php" method = "POST">
