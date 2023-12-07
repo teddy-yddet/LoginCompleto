@@ -11,8 +11,8 @@
         include_once('config.php');
 
         $nome = $_POST['nome'];
-        $usuario = $_POST['usuario'];
         $email = $_POST['email'];
+        $usuario = $_POST['usuario'];
         $senha = $_POST['senha'];
         $telefone = $_POST['telefone'];        
         $genero = $_POST['genero'];
