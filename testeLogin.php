@@ -54,7 +54,7 @@
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
                 echo "vai para cursos";
-                header('Location: cursos.php');
+                header('Location: cadastrar_confidencial.php');
             }
             else if($usuario['tipo'] == "P")
             {
@@ -62,7 +62,7 @@
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
-                header('Location: visitantes.php');
+                header('Location: cadastrar_cursos.php');
             }
             else if($usuario['tipo'] == "D")
             {
@@ -70,7 +70,7 @@
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
-                header('Location: sistema.php');                
+                header('Location: cursos.php');                
             }
             else
             {

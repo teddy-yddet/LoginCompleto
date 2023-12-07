@@ -1,7 +1,7 @@
 <?php
     $dbHost = 'localhost';
     $dbUsername = 'root';
-    $dbPassword = 'ifsp';
+    $dbPassword = '';
     $dbName = 'loginauth';
 
     $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
