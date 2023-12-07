@@ -53,7 +53,7 @@
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo'] = $tipo;
-                echo "vai para cursos";
+                echo "vai para cadastrar confidencial";
                 header('Location: cadastrar_confidencial.php');
             }
             else if($usuario['tipo'] == "P")

@@ -108,22 +108,75 @@
     </style>
   </head>
   <body>
+
+
+
+
+
+
+
+
+
     <a href="home.php">Voltar</a>
     <div class="box">
       <form action="cadastrar_confidencial.php" method="POST">
         <fieldset>
-          <legend><b>Cadastrar conteúdo confidencial</b></legend>
+          <legend><b>Cadastrar avaliação</b></legend>
           <br />
+
+
+
           <div class="inputBox">
             <input
               type="text"
-              name="conteudo"
-              id="conteudo"
+              name="materia"
+              id="materia"
               class="inputUser"
               required
             />
-            <label for="conteudo" class="labelInput">Conteúdo</label>
+
+            <label for="conteudo" class="labelInput">Matéria</label>
+
+
+
+          <br><br>
+            <div class="inputBox">
+            <input
+              type="text"
+              name="observacao"
+              id="observacao"
+              class="inputUser"
+              required
+            />
+
+
+
+
+
+            <label for="conteudo" class="labelInput">Observação</label>
           </div>
+
+
+          <p>Tipo de avaliação:</p>
+                <input type="radio" id="prova" name="tipo" value="prova" required>
+                <label for="prova">Prova</label>
+                <br>
+                <input type="radio" id="trabalho" name="tipo" value="trabalho" required>
+                <label for="trabalho">Trabalho</label>
+                <br>
+                <input type="radio" id="outro" name="tipo" value="Outro" required>
+                <label for="outro">Outro</label>
+                <br><br>
+                <input type="submit" name="submit" id="submit">
+
+
+
+
+
+
+
+
+
         </fieldset>
       </form>
     </div>
