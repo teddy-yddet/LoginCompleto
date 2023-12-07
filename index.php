@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="estilos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Trabalho - Segurança da informação</h1>
+    <h2>Aluno: Sidnei Mitani - CV3016447</h2>
+    <p>Este trabalho consiste na modificação de uma página</p>
+    <p>htmlspecialchars($string, double_encode:false);</p>
+
+
+
+
+    
+    <div class="box">
+      <a href="login.php">Login</a>
+      <a href="visitantes.php">Cadastre-se</a>
+    </div>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
