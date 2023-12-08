@@ -35,7 +35,7 @@
 </head>
 <body>
     <h1>Trabalho - Segurança da informação</h1>
-    <h2>Aluno: Sidnei Mitani - CV3016447</h2>
+    <h2>Alunos: Sidnei Mitani - CV3016447</h2>
 
     <div class="box">
         <a href="login.php">Login</a>
